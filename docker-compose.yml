@@ -1,0 +1,9 @@
+---
+version: '3.7'
+services: 
+  dockerindocker:
+    image: dockerindocker
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
