@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockindock
+spec:
+  selector:
+    matchLabels:
+      app: dockindock
+  template:
+    metadata:
+      labels:
+        app: dockindock
+    spec:
+      containers:
+      - name: dockindock
+        securityContext:
+          privileged: true
+        image: dockerindocker
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
